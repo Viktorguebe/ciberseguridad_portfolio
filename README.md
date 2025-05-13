@@ -1,4 +1,3 @@
-nano README.md
 
 # 🛡️ Portafolio de Ciberseguridad - Viktor
 
