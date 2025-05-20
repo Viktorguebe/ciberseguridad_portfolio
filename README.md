@@ -5,11 +5,14 @@ Aquí encontrarás una recopilación de ejercicios, prácticas reales, documenta
 
 ---
 
-## 📚 Índice
+📚 **Índice**
 
-1. [Reconocimiento con Nmap](#reconocimiento-con-nmap)
-2. [Configuración de entorno](#configuración-de-entorno)
-3. [Próximos temas](#próximos-temas)
+1. Configuración de entorno  
+2. Escaneos de red con Nmap  
+   2.1 Escaneo básico (Ping scan)  
+   2.2 Escaneo agresivo  
+   2.3 Escaneo con detección de versiones y sistema operativo  
+3. Próximos pasos y temas a estudiar
 
 ---
 
@@ -23,70 +26,31 @@ Aquí encontrarás una recopilación de ejercicios, prácticas reales, documenta
 
 ---
 
-## 🔎 Reconocimiento con Nmap
+## 🔎 Escaneos de red con Nmap
 
-### Objetivo:
-Identificar hosts activos en la red local y descubrir puertos abiertos en ellos.
+### 1. Escaneo básico (Ping scan)
 
-### Comando ejecutado:
+**Objetivo:** Identificar hosts activos en la red local.
 
-```bash
-nmap -sP 10.0.2.0/24
-
-### Resultado:
-Se identificaron varios hosts activos en la red. Se detallan a continuación:
-Host: 10.0.2.2 -> MAC: 52:55:0A:00:02:02
-Host: 10.0.2.3 -> MAC: 52:55:0A:00:02:03
-
-### Escaneo de puertos:
-nmap 10.0.2.2
-
-### Resultado:
-Not shown: 1000 closed tcp ports
-
-✅ Explicación rápida:
-Esto significa que el host está activo, pero no tiene puertos abiertos visibles o bien un firewall los bloquea.
-💡 Este tipo de comportamiento es común en redes NAT o entornos protegidos.
-
-### Archivo de resultados:
-Los resultados fueron guardados en un archivo de texto con el siguiente comando:
+**Comando:**
 nmap -sP 10.0.2.0/24 -oN resultado_nmap.txt
 
+**Resultados:**
+Hosts activos detectados:
 
-## 🔎 Escaneo Agresivo con Nmap
+10.0.2.2 → MAC: 52:55:0A:00:02:02
 
-### Comando utilizado:
-```bash
-nmap -A -T4 10.0.2.2 -oN escaneo_agresivo.txt
+10.0.2.3 → MAC: 52:55:0A:00:02:03
 
-### Resultados destacados:
-Puertos abiertos:
+**Escaneo de puertos:**
+nmap 10.0.2.2
 
-135/tcp → Microsoft Windows RPC
+**Resultados:**
+Not shown: 1000 closed tcp ports
 
-445/tcp → microsoft-ds (SMB)
 
-2869/tcp → Microsoft HTTPAPI httpd 2.0 (UPnP)
+✅ Interpretación:
+El host está activo pero no tiene puertos abiertos visibles, o un firewall los está bloqueando. Esto es común en redes NAT o entornos protegidos.
 
-### Sistema operativo detectado:
-
-Entorno virtualizado (QEMU, VirtualBox, Slirp)
-
-No se pudo determinar OS exacto por falta de puertos cerrados
-
-### Información adicional:
-
-SMB con firma opcional (puede ser una debilidad)
-
-Hora del sistema remoto detectada
-
-### Red: Distancia 1 salto (misma red)
-
-### Archivo generado:
-escaneo_agresivo.txt
-
-## ⏭️ Próximos pasos:
-- Prueba con escaneo más agresivo (nmap -A, -sV, -O)
-- Banner grabbing con Netcat
-- Enumeración de servicios
-- Análisis de resultados
+**Archivo de Resultados:**
+nmap -sP 10.0.2.0/24 -oN resultado_nmap.txt
