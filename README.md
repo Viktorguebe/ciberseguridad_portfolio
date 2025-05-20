@@ -5,18 +5,14 @@ Aquí encontrarás una recopilación de ejercicios, prácticas reales, documenta
 
 ---
 
-📚 Índice
-1. Configuración de entorno
+📚 **Índice**
 
-2. Escaneos de red con Nmap
-
- 2.1 Escaneo básico (Ping scan)
-
- 2.2 Escaneo agresivo
-
- 2.3 Escaneo con detección de versiones y sistema operativo
-
-3.Próximos pasos y temas a estudiar
+1. Configuración de entorno  
+2. Escaneos de red con Nmap  
+   2.1 Escaneo básico (Ping scan)  
+   2.2 Escaneo agresivo  
+   2.3 Escaneo con detección de versiones y sistema operativo  
+3. Próximos pasos y temas a estudiar
 
 ---
 
