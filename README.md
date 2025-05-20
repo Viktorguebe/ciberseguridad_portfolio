@@ -8,11 +8,15 @@ Aquí encontrarás una recopilación de ejercicios, prácticas reales, documenta
 📚 Índice
 1. Configuración de entorno
 
-2. Reconocimiento con Nmap
+2. Escaneos de red con Nmap
 
-3. Escaneo agresivo con Nmap
+ 2.1 Escaneo básico (Ping scan)
 
-4. Próximos pasos
+ 2.2 Escaneo agresivo
+
+ 2.3 Escaneo con detección de versiones y sistema operativo
+
+3.Próximos pasos y temas a estudiar
 
 ---
 
@@ -26,75 +30,62 @@ Aquí encontrarás una recopilación de ejercicios, prácticas reales, documenta
 
 ---
 
-## 🔎 Reconocimiento con Nmap
+🔎 Escaneos de red con Nmap
+1. Escaneo básico (Ping scan)
+Objetivo: Identificar hosts activos en la red local.
 
-### Objetivo:
+Comando:
 
-Identificar hosts activos en la red local y descubrir puertos abiertos en ellos.
-
-### Comando ejecutado:
-
-nmap -sP 10.0.2.0/24
-
-
-### Resultado:
-Se identificaron varios hosts activos en la red. Se detallan a continuación:
-| Host     | MAC Address       |
-| -------- | ----------------- |
-| 10.0.2.2 | 52:55:0A:00:02:02 |
-| 10.0.2.3 | 52:55:0A:00:02:03 |
-
-
-### Escaneo de puertos(host 10.0.2.2):
-nmap 10.0.2.2
-
-
-Resultado:
-Not shown: 1000 closed tcp ports
-
-✅ Explicación rápida:
-El host está activo, pero no muestra puertos abiertos o puede tener un firewall que los bloquea. Esto es común en redes NAT o entornos protegidos.
-
-Archivo de resultados
-Los resultados fueron guardados con el siguiente comando:
-
+bash
+Copiar
+Editar
 nmap -sP 10.0.2.0/24 -oN resultado_nmap.txt
+Resultado:
+Se identificaron hosts activos, por ejemplo:
 
----
+10.0.2.2 (MAC: 52:55:0A:00:02:02)
 
-### 🔎 Escaneo agresivo con Nmap
+10.0.2.3 (MAC: 52:55:0A:00:02:03)
 
-### Comando utilizado:
+2. Escaneo agresivo
+Objetivo: Detectar puertos abiertos, servicios, versiones y scripts básicos.
+
+Comando:
+
+bash
+Copiar
+Editar
 nmap -A -T4 10.0.2.2 -oN escaneo_agresivo.txt
+Resultado destacado:
 
+Puertos abiertos: 135, 445, 2869
 
-### Resultados destacados:
-| Puerto   | Servicio                           |
-| -------- | ---------------------------------- |
-| 135/tcp  | Microsoft Windows RPC              |
-| 445/tcp  | microsoft-ds (SMB)                 |
-| 2869/tcp | Microsoft HTTPAPI httpd 2.0 (UPnP) |
+Servicios: Microsoft Windows RPC, SMB, HTTPAPI httpd 2.0
 
-### Sistema operativo detectado:
+Sistema operativo estimado: Entorno virtualizado (QEMU, VirtualBox, etc.)
 
-- Entorno virtualizado (QEMU, VirtualBox, Slirp)
+3. Escaneo con detección de versiones y sistema operativo
+Objetivo: Identificar versiones exactas de servicios y detectar sistema operativo con más detalle.
 
-- No se pudo determinar un OS exacto por falta de puertos cerrados
+Comando:
 
-### Información adicional:
+bash
+Copiar
+Editar
+nmap -sV -O 10.0.2.2 -oN nmap_servicios_y_os.txt
+Resultado destacado:
 
-- SMB con firma opcional (puede ser una debilidad)
+Servicios detectados y versiones (ejemplo): RPC, SMB, HTTPAPI
 
-- Hora del sistema remoto detectada
+Sistema operativo: Entorno virtualizado
 
-- Red: Distancia 1 salto (misma red)
+Nota: Precisión limitada por condiciones del entorno.
 
+⏭️ Próximos pasos y temas a estudiar
+Realizar banner grabbing con Netcat
 
-### Archivo generado:
-escaneo_agresivo.txt
+Enumeración de servicios específicos (SMB, FTP, HTTP)
 
-## ⏭️ Próximos pasos:
-- Prueba con escaneo más agresivo (nmap -A, -sV, -O)
-- Banner grabbing con Netcat
-- Enumeración de servicios
-- Análisis de resultados
+Escaneo con herramientas adicionales (Nikto, Dirb)
+
+Comenzar pruebas de explotación en entorno controlado
