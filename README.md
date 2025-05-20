@@ -5,11 +5,14 @@ Aquí encontrarás una recopilación de ejercicios, prácticas reales, documenta
 
 ---
 
-## 📚 Índice
+📚 Índice
+1. Configuración de entorno
 
-1. [Reconocimiento con Nmap](#reconocimiento-con-nmap)
-2. [Configuración de entorno](#configuración-de-entorno)
-3. [Próximos temas](#próximos-temas)
+2. Reconocimiento con Nmap
+
+3. Escaneo agresivo con Nmap
+
+4. Próximos pasos
 
 ---
 
@@ -30,55 +33,60 @@ Identificar hosts activos en la red local y descubrir puertos abiertos en ellos.
 
 ### Comando ejecutado:
 
-```bash
 nmap -sP 10.0.2.0/24
+
 
 ### Resultado:
 Se identificaron varios hosts activos en la red. Se detallan a continuación:
-Host: 10.0.2.2 -> MAC: 52:55:0A:00:02:02
-Host: 10.0.2.3 -> MAC: 52:55:0A:00:02:03
+| Host     | MAC Address       |
+| -------- | ----------------- |
+| 10.0.2.2 | 52:55:0A:00:02:02 |
+| 10.0.2.3 | 52:55:0A:00:02:03 |
 
-### Escaneo de puertos:
+
+### Escaneo de puertos(host 10.0.2.2):
 nmap 10.0.2.2
 
-### Resultado:
+
+Resultado:
 Not shown: 1000 closed tcp ports
 
 ✅ Explicación rápida:
-Esto significa que el host está activo, pero no tiene puertos abiertos visibles o bien un firewall los bloquea.
-💡 Este tipo de comportamiento es común en redes NAT o entornos protegidos.
+El host está activo, pero no muestra puertos abiertos o puede tener un firewall que los bloquea. Esto es común en redes NAT o entornos protegidos.
 
-### Archivo de resultados:
-Los resultados fueron guardados en un archivo de texto con el siguiente comando:
+Archivo de resultados
+Los resultados fueron guardados con el siguiente comando:
+
 nmap -sP 10.0.2.0/24 -oN resultado_nmap.txt
 
 
-## 🔎 Escaneo Agresivo con Nmap
+
+#🔎 Escaneo agresivo con Nmap
 
 ### Comando utilizado:
-```bash
 nmap -A -T4 10.0.2.2 -oN escaneo_agresivo.txt
 
+
 ### Resultados destacados:
-Puertos abiertos:
-
-135/tcp → Microsoft Windows RPC
-
-445/tcp → microsoft-ds (SMB)
-
-2869/tcp → Microsoft HTTPAPI httpd 2.0 (UPnP)
+| Puerto   | Servicio                           |
+| -------- | ---------------------------------- |
+| 135/tcp  | Microsoft Windows RPC              |
+| 445/tcp  | microsoft-ds (SMB)                 |
+| 2869/tcp | Microsoft HTTPAPI httpd 2.0 (UPnP) |
 
 ### Sistema operativo detectado:
 
-Entorno virtualizado (QEMU, VirtualBox, Slirp)
+- Entorno virtualizado (QEMU, VirtualBox, Slirp)
 
-No se pudo determinar OS exacto por falta de puertos cerrados
+- No se pudo determinar un OS exacto por falta de puertos cerrados
 
 ### Información adicional:
 
-SMB con firma opcional (puede ser una debilidad)
+- SMB con firma opcional (puede ser una debilidad)
 
-Hora del sistema remoto detectada
+- Hora del sistema remoto detectada
+
+- Red: Distancia 1 salto (misma red)
 
 ### Red: Distancia 1 salto (misma red)
 
