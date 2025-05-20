@@ -53,6 +53,38 @@ Los resultados fueron guardados en un archivo de texto con el siguiente comando:
 nmap -sP 10.0.2.0/24 -oN resultado_nmap.txt
 
 
+## 🔎 Escaneo Agresivo con Nmap
+
+### Comando utilizado:
+```bash
+nmap -A -T4 10.0.2.2 -oN escaneo_agresivo.txt
+
+### Resultados destacados:
+Puertos abiertos:
+
+135/tcp → Microsoft Windows RPC
+
+445/tcp → microsoft-ds (SMB)
+
+2869/tcp → Microsoft HTTPAPI httpd 2.0 (UPnP)
+
+### Sistema operativo detectado:
+
+Entorno virtualizado (QEMU, VirtualBox, Slirp)
+
+No se pudo determinar OS exacto por falta de puertos cerrados
+
+### Información adicional:
+
+SMB con firma opcional (puede ser una debilidad)
+
+Hora del sistema remoto detectada
+
+### Red: Distancia 1 salto (misma red)
+
+### Archivo generado:
+escaneo_agresivo.txt
+
 ## ⏭️ Próximos pasos:
 - Prueba con escaneo más agresivo (nmap -A, -sV, -O)
 - Banner grabbing con Netcat
