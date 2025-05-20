@@ -47,5 +47,7 @@ nmap 10.0.2.2
 
 **Resultados:**
 Not shown: 1000 closed tcp ports
+
+
 ✅ Interpretación:
 El host está activo pero no tiene puertos abiertos visibles, o un firewall los está bloqueando. Esto es común en redes NAT o entornos protegidos.
