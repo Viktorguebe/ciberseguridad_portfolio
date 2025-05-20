@@ -60,9 +60,9 @@ Los resultados fueron guardados con el siguiente comando:
 
 nmap -sP 10.0.2.0/24 -oN resultado_nmap.txt
 
+---
 
-
-##🔎 Escaneo agresivo con Nmap
+### 🔎 Escaneo agresivo con Nmap
 
 ### Comando utilizado:
 nmap -A -T4 10.0.2.2 -oN escaneo_agresivo.txt
