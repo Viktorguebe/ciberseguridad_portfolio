@@ -35,3 +35,9 @@ Aquí encontrarás una recopilación de ejercicios, prácticas reales, documenta
 **Comando:**
 nmap -sP 10.0.2.0/24 -oN resultado_nmap.txt
 
+Resultado:
+Se identificaron hosts activos, por ejemplo:
+
+10.0.2.2 (MAC: 52:55:0A:00:02:02)
+
+10.0.2.3 (MAC: 52:55:0A:00:02:03)
