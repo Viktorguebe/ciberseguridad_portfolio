@@ -89,7 +89,6 @@ nmap -A -T4 10.0.2.2 -oN escaneo_agresivo.txt
 
 - Red: Distancia 1 salto (misma red)
 
-### Red: Distancia 1 salto (misma red)
 
 ### Archivo generado:
 escaneo_agresivo.txt
