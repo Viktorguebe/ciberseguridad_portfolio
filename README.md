@@ -29,6 +29,7 @@ Aquí encontrarás una recopilación de ejercicios, prácticas reales, documenta
 ## 🔎 Reconocimiento con Nmap
 
 ### Objetivo:
+
 Identificar hosts activos en la red local y descubrir puertos abiertos en ellos.
 
 ### Comando ejecutado:
@@ -61,7 +62,7 @@ nmap -sP 10.0.2.0/24 -oN resultado_nmap.txt
 
 
 
-#🔎 Escaneo agresivo con Nmap
+##🔎 Escaneo agresivo con Nmap
 
 ### Comando utilizado:
 nmap -A -T4 10.0.2.2 -oN escaneo_agresivo.txt
