@@ -96,6 +96,7 @@ Se detectaron versiones específicas de servicios clave como RPC, SMB y HTTPAPI.
 **Archivo de Resultados:**
 Los datos completos están disponibles en nmap_servicios_y_os.txt.
 
+---
 
 ### 🛠️ Banner Grabbing
 
