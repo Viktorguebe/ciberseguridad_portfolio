@@ -9,7 +9,7 @@ Aquí encontrarás una recopilación de ejercicios, prácticas reales, documenta
 
 1. [Configuración de entorno](#-configuración-de-entorno)  
 2. [Escaneos de red con Nmap](docs/escaneos.md)  
-3. [EBanner Grabbing](docs/banner_grabbing.md)
+3. [Banner Grabbing](docs/banner_grabbing.md)
 4. [Próximos pasos y temas a estudiar](docs/proximos_pasos.md)  
 
 ---
