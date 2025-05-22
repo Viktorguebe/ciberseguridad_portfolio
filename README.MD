@@ -1,14 +1,39 @@
-# 🛡️ Portafolio de Ciberseguridad - Viktor
+# 🛡️ Portafolio de Ciberseguridad - ViktorCyber
 
-¡Bienvenido a mi portafolio de hacking ético y ciberseguridad!  
-Aquí documento paso a paso mis prácticas, retos y conocimientos adquiridos mientras me especializo en el área de seguridad ofensiva.
+Bienvenido a mi portafolio práctico de hacking ético y ciberseguridad ofensiva.  
+Aquí encontrarás una recopilación de ejercicios, prácticas reales, documentación y pruebas realizadas en Kali Linux, acompañadas de explicaciones paso a paso.
 
 ---
 
-## 📂 Índice
+📚 **Índice**
 
-1. [Reconocimiento](#1-reconocimiento)
-2. [Escaneo y Enumeración](#2-escaneo-y-enumeración)
-3. [Explotación](#3-explotación)
-4. [Post-Explotación](#4-post-explotación)
-5. [Notas y Recursos Útiles](#5-notas-y-recursos-útiles)
+1. [Configuración de entorno](#-configuración-de-entorno)  
+2. [Escaneos de red con Nmap](docs/escaneos.md)  
+3. [Próximos pasos y temas a estudiar](docs/proximos_pasos.md)  
+
+---
+
+## 🧰 Configuración de entorno
+
+- **SO:** Kali Linux  
+- **Interfaz de red:** `eth0`  
+- **IP Local:** `10.0.2.15/24`  
+- **Herramientas instaladas:** Git, Nmap, etc.  
+- **Modo de red:** NAT (por ahora)  
+
+---
+
+📂 El resto de los análisis y escaneos están organizados en archivos dentro de la carpeta `/docs/` para facilitar su lectura y mantenimiento.
+
+---
+
+📌 **Objetivo de este repositorio:**
+
+- Documentar todo el proceso de aprendizaje en ciberseguridad ofensiva.  
+- Compartir pruebas y escaneos realizados en entornos controlados.  
+- Construir una base sólida para futuras certificaciones y retos técnicos.
+
+---
+
+🔗 Conecta conmigo en [LinkedIn] www.linkedin.com/in/víctor-guerrero-barbero  
+📬 ¿Tienes sugerencias o quieres colaborar? ¡Abre un issue o mándame un mensaje!
