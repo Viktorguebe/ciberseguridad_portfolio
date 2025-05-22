@@ -12,7 +12,7 @@ Aquí encontrarás una recopilación de ejercicios, prácticas reales, documenta
    2.1 Escaneo básico (Ping scan)  
    2.2 Escaneo agresivo  
    2.3 Escaneo con detección de versiones y sistema operativo
-3. Banner Grabbing
+3. [Banner Grabbing](docs/banner_grabbing.md)
 4. [Próximos pasos y temas a estudiar](docs/proximos_pasos.md)
 
 ---
