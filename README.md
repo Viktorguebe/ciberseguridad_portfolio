@@ -11,8 +11,9 @@ Aquí encontrarás una recopilación de ejercicios, prácticas reales, documenta
 2. [Escaneos de red con Nmap](docs/escaneos.md)    
    2.1 Escaneo básico (Ping scan)  
    2.2 Escaneo agresivo  
-   2.3 Escaneo con detección de versiones y sistema operativo  
-3. [Próximos pasos y temas a estudiar](docs/proximos_pasos.md)
+   2.3 Escaneo con detección de versiones y sistema operativo
+3. Banner Grabbing
+4. [Próximos pasos y temas a estudiar](docs/proximos_pasos.md)
 
 ---
 
@@ -94,3 +95,26 @@ Se detectaron versiones específicas de servicios clave como RPC, SMB y HTTPAPI.
 
 **Archivo de Resultados:**
 Los datos completos están disponibles en nmap_servicios_y_os.txt.
+
+
+### 🛠️ Banner Grabbing
+
+**Objetivo:** Obtener información detallada de los servicios a través de los banners que muestran al establecer conexiones TCP.
+
+**Comando:**
+nc -v 10.0.2.2 80
+
+**Resultados destacados:**
+HEAD / HTTP/1.0
+200 OK
+Content-Length: 1012
+Content-Type: text/html
+Last-Modified: Wed, 23 Apr 2025 10:18:43 GMT
+...
+403 Forbidden
+
+✅ Interpretación:
+El servidor responde con un código 403 Forbidden, indicando que la conexión fue exitosa pero el acceso al recurso está restringido. Este banner puede revelar información útil sobre el servidor web y sus configuraciones de seguridad.
+
+**Archivo de Resultados:**
+Los datos completos están disponibles en banner_grabbing.txt.
